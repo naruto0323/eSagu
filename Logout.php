@@ -1,0 +1,12 @@
+<?php
+include("header_new.php");
+include_once("functions.php");
+include_once("dblayer.php");
+extract($_GET);
+extract($_POST);
+session_start($sid);
+del_crnt_users($current_user_id);
+delete_session_info(session_id());
+logout();
+redirect("index.php");
+?>
